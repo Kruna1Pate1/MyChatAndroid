@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Heading" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="OutlinedInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+</resources>

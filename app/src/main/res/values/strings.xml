@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyChat</string>
+    <string name="profile_image_description">Profile Image</string>
+    <string name="login">Login</string>
+    <string name="hint_required_email">Email <font color="red">*</font></string>
+    <string name="hint_required_password">Password <font color="red">*</font></string>
+</resources>
