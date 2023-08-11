@@ -1,6 +1,7 @@
 package com.krunal.mychat.ui.fragment
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.krunal.mychat.R
 import com.krunal.mychat.databinding.FragmentLoginBinding
 import com.krunal.mychat.ui.base.BaseFragment
@@ -25,6 +26,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
             viewModel.login {
                 Timber.d("Login success")
             }
+        }
+        binding.hintRegister.setOnClickListener {
+            val destination = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            findNavController().navigate(destination)
         }
     }
 }

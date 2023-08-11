@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.krunal.mychat.ui.viewmodel.LoginViewModel" />
+            type="com.krunal.mychat.ui.viewmodel.RegisterViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.LoginFragment">
+        tools:context=".ui.fragment.RegisterFragment">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
@@ -31,15 +31,34 @@
             app:layout_constraintGuide_end="@dimen/dp_16" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtLogin"
+            android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Heading"
-            android:text="@string/login"
+            android:text="@string/register"
             android:layout_marginTop="@dimen/dp_20"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLayoutName"
+            style="@style/OutlinedInputLayout"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:hint="@string/hint_required_full_name"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/txtRegister">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:text="@={ viewModel.registerDetail.name }" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtLayoutEmail"
@@ -50,14 +69,14 @@
             android:hint="@string/hint_required_email"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/txtLogin">
+            app:layout_constraintTop_toBottomOf="@id/txtLayoutName">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textEmailAddress"
-                android:text="@={ viewModel.loginDetail.email }" />
+                android:text="@={ viewModel.registerDetail.email }" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -76,14 +95,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:text="@={ viewModel.loginDetail.password }" />
+                android:text="@={ viewModel.registerDetail.password }" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/hintRegister"
+            android:id="@+id/hintLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dont_have_account_register"
+            android:text="@string/already_have_account_login"
             android:textSize="@dimen/sp_16"
             app:layout_constraintTop_toBottomOf="@id/txtLayoutPassword"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -91,10 +110,10 @@
             android:layout_marginTop="@dimen/dp_40"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_56"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textSize="@dimen/sp_16"
             android:layout_marginBottom="@dimen/dp_16"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"

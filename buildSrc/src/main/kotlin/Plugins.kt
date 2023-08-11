@@ -6,6 +6,7 @@ object Plugins {
     const val GOOGLE_SERVICES = "com.google.gms.google-services"
     const val DETEKT = "io.gitlab.arturbosch.detekt"
     const val FIREBASE = "com.google.gms.google-services"
+    const val SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
 
     object Kotlin {
         const val ANDROID = "android"

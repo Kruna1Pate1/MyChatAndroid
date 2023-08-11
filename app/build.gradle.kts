@@ -4,6 +4,7 @@ plugins {
     kotlin(Plugins.Kotlin.KAPT)
     id(Plugins.HILT)
     id(Plugins.FIREBASE)
+    id(Plugins.SAFE_ARGS)
 }
 
 android {
