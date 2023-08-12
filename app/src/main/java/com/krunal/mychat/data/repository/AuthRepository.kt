@@ -11,6 +11,7 @@ import javax.inject.Singleton
 interface AuthRepository {
 
     suspend fun login(email: String, password: String): ApiResult<FirebaseUser>
+    suspend fun register(name: String, email: String, password: String): ApiResult<FirebaseUser>
 }
 
 @Singleton
@@ -21,6 +22,15 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun login(email: String, password: String): ApiResult<FirebaseUser> {
         return try {
             val result = firebaseService.login(email, password)
+            ApiSuccess(result.user)
+        } catch (e: Exception) {
+            ApiError(0, e.localizedMessage)
+        }
+    }
+
+    override suspend fun register(name: String, email: String, password: String): ApiResult<FirebaseUser> {
+        return try {
+            val result = firebaseService.register(name, email, password)
             ApiSuccess(result.user)
         } catch (e: Exception) {
             ApiError(0, e.localizedMessage)

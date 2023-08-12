@@ -4,4 +4,8 @@
     <string name="login">Login</string>
     <string name="hint_required_email">Email <font color="red">*</font></string>
     <string name="hint_required_password">Password <font color="red">*</font></string>
+    <string name="hint_required_full_name">Full Name <font color="red">*</font></string>
+    <string name="register">Register</string>
+    <string name="dont_have_account_register">Don\'t have account? <font color="blue">Register</font></string>
+    <string name="already_have_account_login">Already have account? <font color="blue">Login</font></string>
 </resources>

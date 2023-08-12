@@ -8,7 +8,8 @@ buildscript {
         classpath(ClassPaths.ANDROID_GRADLE)
         classpath(ClassPaths.KOTLIN_GRADLE)
         classpath(ClassPaths.HILT_GRADLE)
-        classpath("com.google.gms:google-services:4.3.15")
+        classpath(ClassPaths.GOOGLE_SERVICES)
+        classpath(ClassPaths.SAFE_ARGS)
     }
 }
 
