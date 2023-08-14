@@ -4,8 +4,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.krunal.mychat.R
 import com.krunal.mychat.databinding.FragmentLoginBinding
+import com.krunal.mychat.ui.activity.MainActivity
 import com.krunal.mychat.ui.base.BaseFragment
 import com.krunal.mychat.ui.viewmodel.LoginViewModel
+import com.krunal.mychat.utils.extension.launchActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -24,7 +26,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
     private fun setupUI() {
         binding.btnLogin.setOnClickListener {
             viewModel.login {
-                Timber.d("Login success")
+                launchActivity<MainActivity>()
+                requireActivity().finish()
             }
         }
         binding.hintRegister.setOnClickListener {

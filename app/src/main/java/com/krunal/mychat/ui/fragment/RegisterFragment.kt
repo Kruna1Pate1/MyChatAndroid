@@ -5,9 +5,11 @@ import androidx.navigation.fragment.findNavController
 import com.krunal.mychat.R
 import com.krunal.mychat.databinding.FragmentLoginBinding
 import com.krunal.mychat.databinding.FragmentRegisterBinding
+import com.krunal.mychat.ui.activity.MainActivity
 import com.krunal.mychat.ui.base.BaseFragment
 import com.krunal.mychat.ui.viewmodel.LoginViewModel
 import com.krunal.mychat.ui.viewmodel.RegisterViewModel
+import com.krunal.mychat.utils.extension.launchActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -26,7 +28,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
     private fun setupUI() {
         binding.btnRegister.setOnClickListener {
             viewModel.register {
-                Timber.d("Register success")
+                launchActivity<MainActivity>()
+                requireActivity().finish()
             }
         }
         binding.hintLogin.setOnClickListener {

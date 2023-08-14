@@ -3,7 +3,9 @@ package com.krunal.mychat.di
 import com.krunal.mychat.data.repository.AuthRepository
 import com.krunal.mychat.data.repository.AuthRepositoryImpl
 import com.krunal.mychat.data.repository.UserRepository
+import com.krunal.mychat.data.repository.UserRepository2
 import com.krunal.mychat.data.repository.UserRepositoryImpl
+import com.krunal.mychat.data.repository.UserRepositoryImpl2
 import com.krunal.mychat.utils.ResourceHelper
 import com.krunal.mychat.utils.ResourceHelperImpl
 import dagger.Binds
@@ -26,9 +28,13 @@ abstract class AppBindingModule {
 
     @Singleton
     @Binds
-    abstract fun bindUserRepository(impl: UserRepositoryImpl): UserRepository
+    abstract fun bindUserRepository2(impl: UserRepositoryImpl2): UserRepository2
 
     @Singleton
     @Binds
     abstract fun bindAuthRepository(impl: AuthRepositoryImpl): AuthRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindUserRepository(impl: UserRepositoryImpl): UserRepository
 }

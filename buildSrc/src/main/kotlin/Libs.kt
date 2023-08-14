@@ -20,7 +20,8 @@ object Libs {
     const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_JETPACK}"
     const val HILT_DAGGER_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
     const val HILT_COMPILER = "androidx.hilt:hilt-compiler:${Versions.HILT_JETPACK}"
-    const val FIREBASE = "com.google.firebase:firebase-auth-ktx:${Versions.FIREBASE}"
+    const val FIREBASE_AUTH = "com.google.firebase:firebase-auth-ktx:${Versions.FIREBASE}"
+    const val FIREBASE_DATABASE = "com.google.firebase:firebase-database-ktx:${Versions.FIREBASE_DATABASE}"
 
     // Testing
     const val ARCH_CORE_TESTING = "androidx.arch.core:core-testing:${Versions.ARCH_CORE_TESTING}"

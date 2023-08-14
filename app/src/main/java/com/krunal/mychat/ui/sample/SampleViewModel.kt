@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.krunal.mychat.data.remote.response.User
-import com.krunal.mychat.data.repository.UserRepository
+import com.krunal.mychat.data.repository.UserRepository2
 import com.krunal.mychat.di.IoDispatcher
 import com.krunal.mychat.di.MainDispatcher
 import com.krunal.mychat.ui.base.BaseViewModel
@@ -24,7 +24,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SampleViewModel @Inject constructor(
-    private val userRepository: UserRepository,
+    private val userRepository: UserRepository2,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
     @MainDispatcher private val mainDispatcher: CoroutineDispatcher
 ) : BaseViewModel() {

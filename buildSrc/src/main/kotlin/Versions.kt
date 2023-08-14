@@ -22,6 +22,7 @@ object Versions {
     const val HILT = "2.44.2"
     const val HILT_JETPACK = "1.0.0"
     const val FIREBASE = "22.1.1"
+    const val FIREBASE_DATABASE = "20.2.2"
     const val JUNIT = "4.13.2"
     const val JUNIT_EXT = "1.1.5"
     const val KOTLIN_GRADLE = "1.8.10"

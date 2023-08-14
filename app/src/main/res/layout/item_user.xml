@@ -7,52 +7,50 @@
 
         <variable
             name="data"
-            type="com.krunal.mychat.data.remote.response.User" />
-
+            type="com.krunal.mychat.data.remote.model.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="?attr/listPreferredItemPaddingStart">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="@dimen/profile_img_size"
-            android:layout_height="@dimen/profile_img_size"
-            app:imageUrl="@{ data.picture.medium }"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginVertical="@dimen/dp_4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedImage"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@mipmap/ic_launcher_round"
-            android:contentDescription="@string/profile_image_description" />
+            app:srcCompat="@drawable/ic_person_24" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtName"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_normal"
-            android:text="@{ data.name.toString() }"
-            android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintBottom_toBottomOf="@+id/profileImage"
-            app:layout_constraintStart_toEndOf="@+id/profileImage"
-            app:layout_constraintTop_toTopOf="@+id/profileImage"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Name" />
-
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_small"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:text="@{ data.location.address() }"
-            android:textAppearance="?attr/textAppearanceListItemSmall"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:text="@{ data.name }"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toTopOf="@+id/txtEmail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/name"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="24 some colony, Ahmedabad, 380015, Gujarat, India" />
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Krunal Patel" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtEmail"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:text="@{ data.email }"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            app:layout_constraintTop_toBottomOf="@+id/txtName"
+            tools:text="krunal.patel@gmail.com" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

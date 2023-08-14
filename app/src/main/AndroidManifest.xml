@@ -29,6 +29,8 @@
         <activity android:name=".ui.sample.SampleActivity" />
 
         <activity android:name=".ui.activity.AuthActivity" />
+
+        <activity android:name=".ui.activity.MainActivity" />
     </application>
 
 </manifest>

@@ -104,7 +104,9 @@ dependencies {
     kapt(Libs.HILT_COMPILER)
 
     // Firebase
-    implementation(Libs.FIREBASE)
+    implementation(Libs.FIREBASE_AUTH)
+
+    implementation(Libs.FIREBASE_DATABASE)
 
     // Material
     implementation(Libs.MATERIAL)
