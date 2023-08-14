@@ -1,22 +1,22 @@
 package com.krunal.mychat.data.repository
 
-import com.krunal.mychat.data.remote.ApiService
+import com.krunal.mychat.data.remote.FirebaseService
 import com.krunal.mychat.data.remote.apiresult.ApiResult
-import com.krunal.mychat.data.remote.response.UserResponse
+import com.krunal.mychat.data.remote.model.User
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
 interface UserRepository {
-    /**
-     * Loads [List] of [UserResponse]
-     */
-    suspend fun loadUsers(page: Int = 1): ApiResult<UserResponse>
+
+    suspend fun getUsers(): Flow<ApiResult<List<User>>>
 }
 
 @Singleton
 class UserRepositoryImpl @Inject constructor(
-    private val apiService: ApiService
+    private val firebaseService: FirebaseService
 ) : UserRepository {
-    override suspend fun loadUsers(page: Int): ApiResult<UserResponse> =
-        apiService.loadUsers(page)
+
+    override suspend fun getUsers(): Flow<ApiResult<List<User>>> =
+        firebaseService.getUsers()
 }
